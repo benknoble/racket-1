@@ -1571,6 +1571,8 @@ Like @racket[require-spec], but omitting those imports that would be
 aliens
 ]}
 
+@compile-time-note{The second part of @racket[filtered-in]}
+
 @defform[(filtered-in proc-expr require-spec)]{ 
 
   Applies an arbitrary transformation on the import names (as strings)
@@ -1682,6 +1684,8 @@ Examples:
   @racket[provide-spec], but including only exports of bindings with
   an external name that matches @racket[regexp]. The @racket[regexp]
   must be a literal regular expression (see @secref["regexp"]).}
+
+@compile-time-note{The second part of @racket[filtered-out]}
 
 @defform[(filtered-out proc-expr provide-spec)]{
 

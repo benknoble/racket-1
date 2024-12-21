@@ -24,6 +24,8 @@ The expected use of the @racketmodname[racket/fixnum] library is for
 code where the @racket[require] of @racketmodname[racket/fixnum] is
 replaced with
 
+@compile-time-note{The second part of @racket[filtered-in]}
+
 @racketblock[(require (filtered-in
                        (λ (name)
                          (and (regexp-match #rx"^unsafe-fx" name)

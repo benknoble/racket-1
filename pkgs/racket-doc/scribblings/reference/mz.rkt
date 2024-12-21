@@ -183,3 +183,14 @@
   @elemref['(caveat "concurrency")]{caveats concerning concurrent modification})
 @(define (mutable-key-caveat)
   @elemref['(caveat "mutable-keys")]{caveat concerning mutable keys})
+
+(provide compile-time-note)
+(define (compile-time-note . what)
+  @margin-note{
+    @what is expand-time code evaluated in the scope of the enclosing module.
+    Accordingly, most uses need @racket[(require (for-syntax racket/base))] if
+    @racketmodname[racket/base] is not already imported @racket[for-syntax]. For
+    example, @racket[@#,(hash-lang) @#,racketmodname[racket]] establishes this
+    import automatically, while @racket[@#,(hash-lang) @#,racketmodname[racket/base]]
+    does not.
+  })
